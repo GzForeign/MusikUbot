@@ -20,10 +20,10 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            "Sintaks Perintah Tidak Valid, Silakan Periksa Menu Bantuan Untuk Tahu Lebih Banyak!",
+            "Sintaks Perintah Ga Valid, Silakan Periksa Menu Bantuan Untuk Tahu Lebih Banyak!",
         )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎Sedang Mencari Lagu** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"**🔎 Mencari Lagu** `{urlissed}`")
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -63,7 +63,7 @@ async def song(client, message: Message):
     c_time = time.time()
     capy = f"""
 **❤️‍🔥 Nama Lagu:** [{thum}]({mo})
-**🗃️ Permintaan Dari:** {message.from_user.mention}
+**🦍 Permintaan Ayang:** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
@@ -78,7 +78,7 @@ async def song(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**Sedang Mendownload Lagu 📥** `{urlissed}`",
+            f"**Sedang Mengunduh Lagu 📥** `{urlissed}`",
             file_stark,
         ),
     )
@@ -235,7 +235,7 @@ async def vsong(client, message: Message):
     pablo = await client.send_message(message.chat.id, f"**🔎 Mencari** `{urlissed}`")
     if not urlissed:
         await pablo.edit(
-            "Sintaks Perintah Tidak Valid, Silakan Periksa Menu Bantuan Untuk Tahu Lebih Banyak!"
+            "Sintaks Perintah Ga Valid, Silakan Periksa Menu Bantuan Untuk Tahu Lebih Banyak!"
         )
         return
 
@@ -272,7 +272,7 @@ async def vsong(client, message: Message):
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
 **🗃️ Nama Video:** [{thum}]({mo})
-**🦹🏻 Permintaan Dari:** {message.from_user.mention}
+**🦍 Permintaan Ayang:** {message.from_user.mention}
 """
     await client.send_video(
         message.chat.id,
@@ -286,7 +286,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**Sedang Mendownload Video 📥** `{urlissed}`",
+            f"**Sedang Mengunduh Video 📥** `{urlissed}`",
             file_stark,
         ),
     )
