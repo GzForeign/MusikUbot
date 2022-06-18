@@ -4,20 +4,20 @@ from config import call_py, bot
 
 
 async def main():
-    print("STARTING UBOT CLIENT")
+    print("MEMULAI UBOT CLIENT")
     await bot.start()
-    print("STARTING PYTGCALLS CLIENT")
+    print("MEMULAI PYTGCALLS CLIENT")
     await call_py.start()
     print(
         """
     ------------------------
-   | MusicUserbot Actived! |
+   | MusikUbot Aktif! |
     ------------------------
 """
     )
     await idle()
     await pidle()
-    print("STOPPING USERBOT")
+    print("MENGHENTIKAN UBOT")
     await bot.stop()
 
 
