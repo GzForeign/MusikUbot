@@ -18,7 +18,7 @@ async def aexec(code, client, m: Message):
 @Client.on_message(filters.command(["eval"], prefixes=f"{HNDLR}"))
 async def executor(client, m: Message):
     if len(m.command) < 2:
-        return await m.edit(text="`please give me some command to execute.`")
+        return await m.edit(text="`please give me command to execute.`")
     try:
         cmd = m.text.split(" ", maxsplit=1)[1]
     except IndexError:
