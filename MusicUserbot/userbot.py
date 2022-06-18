@@ -27,11 +27,11 @@ async def _human_time_duration(seconds):
             parts.append("{} {}{}".format(amount, unit, "" if amount == 1 else ""))
     return ", ".join(parts)
 
-@Client.on_message(filters.command(["ping"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["gz"], prefixes=f"{HNDLR}"))
 async def ping(client, m: Message):
    start = time()
    current_time = datetime.utcnow()
-   m_reply = await m.edit("Pinging ngewe...")
+   m_reply = await m.edit("Prot prot ngewe...")
    delta_ping = time() - start
    await m_reply.edit("0% ▒▒▒▒▒▒▒▒▒▒")
    await m_reply.edit("20% ██▒▒▒▒▒▒▒▒")
@@ -42,14 +42,14 @@ async def ping(client, m: Message):
    end = datetime.now()
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
-   await m_reply.edit(f"**┞◈𝗣𝗼𝗻𝗴!!🏓**\n**┞◈Pinger**  - {delta_ping * 1000:.3f} ms \n**┞◈Uptime** - {uptime}")
+   await m_reply.edit(f"**┞◈𝗣𝗼𝗻𝗴!!🦍**\n**┞◈Pinger**  - {delta_ping * 1000:.3f} ms \n**┞◈Uptime** - {uptime}")
 
 
-@Client.on_message(filters.command(["pong"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["gorzz"], prefixes=f"{HNDLR}"))
 async def pong(client, m: Message):
    start = time()
    current_time = datetime.utcnow()
-   pong = await m.edit("kontol jamet...")
+   pong = await m.edit("yamete kudasai...")
    delta_ping = time() - start
    await pong.edit("❏◈===❏")
    await pong.edit("❏=◈==❏")
@@ -69,12 +69,12 @@ async def pong(client, m: Message):
    await pong.edit("❏===◈❏")
    await pong.edit("❏===◈❏◈")
    await pong.edit("❏====❏◈◈")
-   await pong.edit("**◈CROOTTTT PINGGGG!**")
+   await pong.edit("**◈AVVVVV PINGGGG!**")
    end = datetime.now()
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
    await pong.edit(
-       f"**❏MusicUserbot**\n**❏NGENTOT** : {delta_ping * 1000:.3f} ms\n**❏Bot Uptime** : {uptime}")
+       f"**❏MusicUbot**\n**❏NGENTOT** : {delta_ping * 1000:.3f} ms\n**❏Bot Uptime** : {uptime}")
 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=f"{HNDLR}")
@@ -90,7 +90,7 @@ async def restart(client, m: Message):
     await loli.edit("7")
     await loli.edit("8")
     await loli.edit("9")
-    await loli.edit("**✅ Music Userbot Di Restart Ulang**")
+    await loli.edit("**✅ Musik Ubot Di Mulai Ulang**")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 
@@ -99,9 +99,9 @@ async def restart(client, m: Message):
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
-<b>👋 Hallo {m.from_user.mention}!
+<b>🥵 Ayang {m.from_user.mention}!
 
-🛠 MENU BANTUAN MUSIC PLAYER
+🛠 MENU BANTUAN PEMUTAR MUSIK
 
 ⚡ PERINTAH UNTUK SEMUA ORANG
 • {HNDLR}play [judul lagu | link youtube | balas file audio] - untuk memutar lagu
@@ -127,28 +127,28 @@ async def help(client, m: Message):
 async def repo(client, m: Message):
     await m.delete()
     REPO = f"""
-<b>👋 Hallo {m.from_user.mention}!
+<b>🥵 Ayang {m.from_user.mention}!
 
-🗃️ Music Dan Video Player UserBot
+🗃️ Musik Dan Video Player UBot
 
-🔰 Telegram UserBot Untuk Memutar Lagu Dan Video Di Obrolan Suara Telegram.
+🔰 Telegram UBot Untuk Memutar Lagu Dan Video Di Obrolan Suara Telegram.
 
-👩‍💻 Dipersembahkan Oleh 
-• [Zaen](https://t.me/Mafia_TobaTZ)
+🦍 Dipersembahkan Oleh 
+• [Gorzz](https://t.me/teleidgz)
 
 📝 Persyaratan
 • Python 3.8+
 • FFMPEG
 • Nodejs v16+
 
-[Repo MusicUserbot](https://github.com/Zaen-ubot/MusicUserbot)
+[Repo MusikUbot](https://t.me/grzmusik)
 
 📝 Variabel Yang Dibutuhkan
 • `API_ID` - Dapatkan Dari [my.telegram.org](https://my.telegram.org)
 • `API_HASH` - Dapatkan Dari [my.telegram.org](https://my.telegram.org)
 • `SESSION` - Sesi String Pyrogram.
 • `SUDO_USER` - ID Akun Telegram Yang Digunakan Sebagai Admin
-• `HNDLR` - Handler untuk menjalankan userbot mu
+• `HNDLR` - Handler untuk menjalankan ubot mu
 
 """
     await m.reply(REPO, disable_web_page_preview=True)
