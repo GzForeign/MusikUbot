@@ -17,7 +17,7 @@ async def main():
     )
     await idle()
     await pidle()
-    print("MENGHENTIKAN UBOT")
+    print("UBOT BERHENTI")
     await bot.stop()
 
 
